@@ -1,0 +1,23 @@
+{
+  "name": "Google Search Keyboard Shortcuts",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Google Search Keyboard Shortcuts",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.google.com/search?*",
+        "http://*.google.com/",
+        "https://*.google.com/search?*",
+        "https://*.google.com/"
+      ],
+      "js": ["script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "http://*.google.com/",
+    "https://*.google.com/"
+  ]
+}
+
