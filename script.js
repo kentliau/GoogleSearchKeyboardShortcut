@@ -45,7 +45,6 @@
       }
 
       e.stopPropagation();
-      e.preventDefault();
     };
 
 })();
