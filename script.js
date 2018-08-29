@@ -8,12 +8,12 @@
 (function() {
     var hightlightColor = '#ffc';
     var idx = 0;
-    var links = document.querySelectorAll('h3.r a, #pnprev, #pnnext');
+    var links = document.querySelectorAll('.rc .r a h3, #pnprev span.csb, #pnnext span.csb');
     var searchInputBox = document.querySelector('#lst-ib');
     var mainElement = document.getElementById('main');
 
-    links[idx].focus();
-    links[idx].style.backgroundColor = hightlightColor;
+    links[idx].parentElement.focus();
+    links[idx].parentElement.style.backgroundColor = hightlightColor;
 
     mainElement.onkeypress = function (e) {
       e = e || window.event;
@@ -23,25 +23,25 @@
       }
 
       if (e.keyCode == 106) {
-        links[idx].style.backgroundColor = 'inherit';
+        links[idx].parentElement.style.backgroundColor = 'inherit';
         if (idx >= links.length - 1) {
           idx = 0;
         } else {
           idx++;
         }
-        links[idx].focus();
-        links[idx].style.backgroundColor = hightlightColor;
+        links[idx].parentElement.focus();
+        links[idx].parentElement.style.backgroundColor = hightlightColor;
       }
 
       if (e.keyCode == 107) {
-        links[idx].style.backgroundColor = 'inherit';
+        links[idx].parentElement.style.backgroundColor = 'inherit';
         if (idx == 0) {
           idx = links.length - 1;
         } else {
           idx--;
         }
-        links[idx].focus();
-        links[idx].style.backgroundColor = hightlightColor;
+        links[idx].parentElement.focus();
+        links[idx].parentElement.style.backgroundColor = hightlightColor;
       }
 
       e.stopPropagation();
