@@ -20,6 +20,12 @@
 
       if (e.keyCode == 47) {
         searchInputBox.focus();
+        console.log("preventDefault");
+        e.preventDefault();
+
+        var val = searchInputBox.value; //store the value of the element
+        searchInputBox.value = ''; //clear the value of the element
+        searchInputBox.value = val;
       }
 
       if (e.keyCode == 106) {
