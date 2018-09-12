@@ -8,12 +8,14 @@
 (function() {
     var hightlightColor = '#ffc';
     var idx = 0;
-    var links = document.querySelectorAll('.rc .r a h3, #pnprev span.csb, #pnnext span.csb');
+    var links = document.querySelectorAll('.rc .r a, a.lLrAF, #pnprev, #pnnext');
     var searchInputBox = document.querySelector('#lst-ib');
     var mainElement = document.getElementById('main');
 
-    links[idx].parentElement.focus();
-    links[idx].parentElement.style.backgroundColor = hightlightColor;
+    if (links.length > 2) {
+      links[idx].focus();
+      links[idx].style.backgroundColor = hightlightColor;
+    }
 
     mainElement.onkeypress = function (e) {
       e = e || window.event;
@@ -29,25 +31,25 @@
       }
 
       if (e.keyCode == 106) {
-        links[idx].parentElement.style.backgroundColor = 'inherit';
+        links[idx].style.backgroundColor = 'inherit';
         if (idx >= links.length - 1) {
           idx = 0;
         } else {
           idx++;
         }
-        links[idx].parentElement.focus();
-        links[idx].parentElement.style.backgroundColor = hightlightColor;
+        links[idx].focus();
+        links[idx].style.backgroundColor = hightlightColor;
       }
 
       if (e.keyCode == 107) {
-        links[idx].parentElement.style.backgroundColor = 'inherit';
+        links[idx].style.backgroundColor = 'inherit';
         if (idx == 0) {
           idx = links.length - 1;
         } else {
           idx--;
         }
-        links[idx].parentElement.focus();
-        links[idx].parentElement.style.backgroundColor = hightlightColor;
+        links[idx].focus();
+        links[idx].style.backgroundColor = hightlightColor;
       }
 
       e.stopPropagation();
