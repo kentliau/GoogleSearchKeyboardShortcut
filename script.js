@@ -8,7 +8,7 @@
 (function() {
     var hightlightColor = '#ffc';
     var idx = 0;
-    var links = document.querySelectorAll('.rc .r a, a.lLrAF, #pnprev, #pnnext');
+    var links = document.querySelectorAll('.rc > .r > a, a.lLrAF, #pnprev, #pnnext');
     var searchInputBox = document.querySelector('#lst-ib');
     var mainElement = document.getElementById('main');
 
